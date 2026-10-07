@@ -7,6 +7,20 @@
  *
  * @author alae2
  */
-public class Employe {
-    
+public abstract class Employe extends Personne {
+ 
+    private double salaire;
+ 
+    public Employe(String nom, String prenom, int age, String email, double salaire) {
+        super(nom, prenom, age, email);
+        this.salaire = salaire;
+    }
+ 
+    public double getSalaire() {
+        return salaire;
+    }
+ 
+    @Override
+    public abstract String printDesc();
 }
+ 

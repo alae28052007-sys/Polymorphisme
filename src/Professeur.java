@@ -7,6 +7,24 @@
  *
  * @author alae2
  */
-public class Professeur {
-    
+import java.util.ArrayList;
+ 
+public class Professeur extends Employe {
+ 
+    private ArrayList<String> listeMatieres;
+ 
+    public Professeur(String nom, String prenom, int age, String email, double salaire) {
+        super(nom, prenom, age, email, salaire);
+        this.listeMatieres = new ArrayList<>();
+    }
+ 
+    public void ajouterMatiere(String matiere) {
+        this.listeMatieres.add(matiere);
+    }
+ 
+    @Override
+    public String printDesc() {
+        return getBaseDesc() + " - " + (int) getSalaire() + "€/mois - Enseigne en "
+                + String.join(", ", listeMatieres) + ".";
+    }
 }
